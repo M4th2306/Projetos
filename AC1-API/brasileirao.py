@@ -133,13 +133,17 @@ o número de vezes que um jogo ocorreu no estádio
 '''
 def dicionario_id_estadio_e_nro_jogos(dados):
     estadio = []
+    dic_estadio = {}
     
     for i in dados['fases']['2700']['jogos']['id']:
         c = 0
         estadio.insert(c, dados['fases']['2700']['jogos']['id'][i]['estadio_id'])
         c =+ 1
 
-    return set(estadio)
+    for i in list(set(estadio)):
+        dic_estadio[i] = estadio.count(i)
+
+    return dic_estadio
 
 
 
@@ -174,34 +178,26 @@ if __name__ == '__main__':
 
     '''
 
-    #print('Dados do dicionário: ', dados2018)
-    #print("\n\n\n") #apenas uns espaços pra te ajudar a ler.
+    # print('Dados do dicionário: ', dados2018)
+    # print("\n\n\n") #apenas uns espaços pra te ajudar a ler.
     
-    #print('todas as chaves do dicionario principal', dados2018.keys())
+    # print('todas as chaves do dicionario principal', dados2018.keys())
 
 
-    #print('\n\nEsses foram os dados de todos os times')
-    #print('Repare que cada time tem uma id. A id do Flamengo é 1')
-    #pprint(dados2018['equipes'])
+    # print('\n\nEsses foram os dados de todos os times')
+    # print('Repare que cada time tem uma id. A id do Flamengo é 1')
+    # pprint(dados2018['equipes'])
     
-   # print('\n\nDado do Flamengo')
-   # pprint(dados2018['equipes']['1']['nome-comum'])
+    # print('\n\nDado do Flamengo')
+    # pprint(dados2018['equipes']['1']['nome-comum'])
     
-    #print('\n\nFaixas de classificacao e rebaixamento')
-    #pprint(dados2018['fases']['2700']['faixas-classificacao'])
+    # print('\n\nFaixas de classificacao e rebaixamento')
+    # pprint(dados2018['fases']['2700']['faixas-classificacao'])
 
-    #print('\n\nClassificacao dos times no fim do campeonato')
-    #print(dados2018['fases']['2700']['classificacao']['grupo']['Único'])
+    # print('\n\nClassificacao dos times no fim do campeonato')
+    # print(dados2018['fases']['2700']['classificacao']['grupo']['Único'])
     
     #Aqui, chamar as funções
-    # print('Nome do time: ', nome_do_time(dados2018,'15'))
-    # print('Id do campeao: ', id_campeao(dados2018))
-    # print('Nome do campeao: ', nome_campeao(dados2018))
-    # print('Os melhores: ', ids_dos_melhor_classificados(dados2018, 5))
-    # print('Datas dos jogos: ', datas_de_jogo(dados2018))
-    # print('Id do time: ', id_do_time(dados2018, 'Flamengo'))
-    # print('Posição do time: ', classificacao_do_time_por_id(dados2018, '18'))
-    print('Teste: ', dicionario_id_estadio_e_nro_jogos(dados2018))
     
     
 
